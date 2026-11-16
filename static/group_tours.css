@@ -1,0 +1,964 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8f7;
+    color: #17362f;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ================= TOP BAR ================= */
+
+.top-bar {
+    min-height: 42px;
+    padding: 8px 6%;
+    background: #102e28;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 13px;
+}
+
+.top-left,
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar a {
+    color: white;
+}
+
+.top-bar a:hover {
+    color: #f4b942;
+}
+
+
+/* ================= HEADER ================= */
+
+.main-header {
+    height: 82px;
+    padding: 0 6%;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #e7ece9;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name strong {
+    font-size: 21px;
+    color: #0878df;
+}
+
+.brand-name span {
+    font-size: 11px;
+    color: #777;
+}
+
+
+.main-nav {
+    display: flex;
+    gap: 28px;
+}
+
+.main-nav a {
+    color: #263d38;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 30px 0;
+    position: relative;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #0878df;
+}
+
+.main-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    height: 3px;
+    background: #f4b942;
+}
+
+
+.book-btn {
+    display: inline-block;
+    background: #f4b942;
+    color: #17362f;
+    padding: 13px 22px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.book-btn:hover {
+    background: #e3a92f;
+}
+
+
+/* ================= HERO ================= */
+
+.group-hero {
+    min-height: 430px;
+
+    position: relative;
+
+    background-image:
+        url("/static/photos/2.jpeg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 35, 29, .9),
+            rgba(7, 35, 29, .55),
+            rgba(7, 35, 29, .15)
+        );
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 105px 6%;
+    color: white;
+}
+
+
+.hero-tag {
+    display: inline-block;
+
+    background: #f4b942;
+    color: #17362f;
+
+    padding: 8px 14px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    border-radius: 4px;
+}
+
+
+.hero-content h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.02;
+    margin: 18px 0;
+}
+
+
+.hero-content p {
+    max-width: 560px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #e9efec;
+}
+
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 28px;
+
+    padding: 15px 25px;
+
+    background: #0878df;
+    color: white;
+
+    border-radius: 5px;
+
+    font-weight: 700;
+}
+
+
+/* ================= SEARCH ================= */
+
+.tour-search {
+    max-width: 1120px;
+
+    margin: -45px auto 60px;
+
+    position: relative;
+    z-index: 5;
+
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .12);
+}
+
+
+.search-title {
+    margin-bottom: 20px;
+}
+
+.search-title span {
+    color: #0878df;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.search-title h2 {
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+
+.search-fields {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 1fr 1fr auto;
+
+    gap: 15px;
+
+    align-items: end;
+}
+
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+
+.search-field label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.search-field select {
+    height: 46px;
+
+    border: 1px solid #d9e0dd;
+
+    border-radius: 5px;
+
+    padding: 0 12px;
+
+    background: white;
+
+    color: #374842;
+}
+
+
+.search-btn {
+    height: 46px;
+
+    border: none;
+
+    padding: 0 22px;
+
+    border-radius: 5px;
+
+    background: #0878df;
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* ================= TOURS SECTION ================= */
+
+.tours-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 0 25px 80px;
+}
+
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+
+.section-heading span,
+.why-heading span {
+    color: #0878df;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.section-heading h2,
+.why-heading h2 {
+    margin-top: 7px;
+
+    font-size: 35px;
+}
+
+
+.section-heading p {
+    max-width: 430px;
+
+    color: #687873;
+
+    line-height: 1.7;
+}
+
+
+/* ================= LAYOUT ================= */
+
+.tour-layout {
+    display: grid;
+
+    grid-template-columns: 235px 1fr;
+
+    gap: 30px;
+}
+
+
+/* ================= FILTER ================= */
+
+.filters {
+    background: white;
+
+    border: 1px solid #e1e8e5;
+
+    border-radius: 8px;
+
+    height: fit-content;
+}
+
+
+.filter-header {
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #e7ece9;
+}
+
+
+.filter-header h3 {
+    font-size: 17px;
+}
+
+
+.filter-header button {
+    border: none;
+
+    background: none;
+
+    color: #0878df;
+
+    cursor: pointer;
+}
+
+
+.filter-group {
+    padding: 20px;
+
+    border-bottom: 1px solid #e7ece9;
+}
+
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+
+.filter-group h4 {
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+
+.filter-group label {
+    display: block;
+
+    margin: 12px 0;
+
+    font-size: 13px;
+
+    color: #586863;
+}
+
+
+.filter-group input {
+    margin-right: 8px;
+}
+
+
+/* ================= RESULTS ================= */
+
+.results-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.results-top span {
+    color: #777;
+}
+
+
+.sort-select {
+    padding: 10px 14px;
+
+    border: 1px solid #dce4e1;
+
+    border-radius: 5px;
+
+    background: white;
+}
+
+
+/* ================= CARDS ================= */
+
+.tour-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.tour-card {
+    background: white;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e9e6;
+
+    transition: .25s ease;
+}
+
+
+.tour-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .12);
+}
+
+
+.tour-image {
+    height: 205px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.tour-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .4s ease;
+}
+
+
+.tour-card:hover .tour-image img {
+    transform: scale(1.06);
+}
+
+
+.tour-badge {
+    position: absolute;
+
+    top: 14px;
+    left: 14px;
+
+    background: #f4b942;
+
+    color: #17362f;
+
+    padding: 7px 10px;
+
+    border-radius: 4px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+.tour-info {
+    padding: 19px;
+}
+
+
+.tour-location {
+    color: #0878df;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin-bottom: 9px;
+}
+
+
+.tour-info h3 {
+    font-size: 18px;
+
+    line-height: 1.35;
+
+    margin-bottom: 10px;
+
+    color: #17362f;
+}
+
+
+.tour-info p {
+    color: #71807b;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    min-height: 62px;
+}
+
+
+.tour-details {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    margin-top: 8px;
+
+    border-top: 1px solid #edf1ef;
+
+    color: #687873;
+
+    font-size: 11px;
+}
+
+
+.tour-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 12px;
+
+    border-top: 1px solid #edf1ef;
+}
+
+
+.price {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.price small {
+    color: #777;
+
+    font-size: 11px;
+}
+
+
+.price strong {
+    color: #17362f;
+
+    font-size: 18px;
+}
+
+
+.view-btn {
+    background: #0878df;
+
+    color: white;
+
+    padding: 10px 13px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.view-btn:hover {
+    background: #0565bd;
+}
+
+
+/* ================= PAGINATION ================= */
+
+.pagination {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 40px;
+}
+
+
+.pagination button {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #dce5e1;
+
+    background: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+.pagination .active {
+    background: #0878df;
+
+    color: white;
+
+    border-color: #0878df;
+}
+
+
+/* ================= WHY SECTION ================= */
+
+.why-group {
+    background: #edf4f1;
+
+    padding: 80px 6%;
+}
+
+
+.why-heading {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: auto auto 45px;
+}
+
+
+.why-heading p {
+    color: #687873;
+
+    line-height: 1.7;
+
+    margin-top: 12px;
+}
+
+
+.why-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.why-card {
+    background: white;
+
+    padding: 30px 22px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    border: 1px solid #e0e9e5;
+}
+
+
+.why-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+
+.why-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 16px;
+}
+
+
+.why-card p {
+    color: #71807b;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #102e28;
+
+    color: white;
+
+    padding: 55px 6% 0;
+}
+
+
+.footer-content {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 45px;
+}
+
+
+.footer h3 {
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+
+.footer h4 {
+    margin-bottom: 15px;
+}
+
+
+.footer p {
+    color: #c4d2cd;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+.footer a {
+    display: block;
+
+    color: #c4d2cd;
+
+    margin: 9px 0;
+
+    font-size: 14px;
+}
+
+
+.footer a:hover {
+    color: #f4b942;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #aebdb8;
+
+    font-size: 12px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .tour-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .top-bar {
+        display: none;
+    }
+
+    .main-header {
+        height: auto;
+
+        padding: 15px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .main-nav {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+    }
+
+    .main-nav a {
+        white-space: nowrap;
+
+        padding: 10px 0;
+    }
+
+    .main-nav a.active::after {
+        bottom: 0;
+    }
+
+    .tour-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        display: none;
+    }
+
+    .search-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero-content {
+        padding: 80px 6%;
+    }
+
+    .hero-content h1 {
+        font-size: 43px;
+    }
+
+    .tour-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-action {
+        display: none;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+}

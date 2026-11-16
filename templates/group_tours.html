@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Group Tours | Ngary's Tour and Travel Adventures</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='group_tours.css') }}">
+</head>
+
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<div class="top-bar">
+
+    <div class="top-left">
+        <span>📧 travel@ngarystours.com</span>
+        <span>📞 +254 181 707 827</span>
+        <a href="https://wa.me/254181707827"
+           target="_blank"
+           rel="noopener noreferrer">
+            💬 WhatsApp
+        </a>
+    </div>
+
+    <div class="top-right">
+        <span>KES</span>
+        <span>English</span>
+
+        <a href="{{ url_for('login') }}">
+            Sign In
+        </a>
+    </div>
+
+</div>
+
+
+<!-- ================= NAVIGATION ================= -->
+<header class="main-header">
+
+    <div class="logo">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='photos/logo.png') }}"
+                 alt="Ngary's Tours">
+        </a>
+
+        <div class="brand-name">
+            <strong>Ngary's</strong>
+            <span>Tour & Travel Adventures</span>
+        </div>
+    </div>
+
+
+    <nav class="main-nav">
+
+        <a href="{{ url_for('index') }}">
+            Home
+        </a>
+
+        <a href="{{ url_for('group_tours') }}" class="active">
+            Group Tours
+        </a>
+
+        <a href="{{ url_for('solo_tours') }}">
+            Solo Tours
+        </a>
+
+        <a href="{{ url_for('events') }}">
+            Events
+        </a>
+
+        <a href="{{ url_for('campsite') }}">
+            Campsite
+        </a>
+
+    </nav>
+
+
+    <div class="nav-action">
+
+        <a href="{{ url_for('booking') }}" class="book-btn">
+            Book Now
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="group-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            GROUP SAFARI EXPERIENCES
+        </span>
+
+        <h1>
+            Discover Kenya<br>
+            Together
+        </h1>
+
+        <p>
+            Join unforgettable group adventures across Kenya's
+            most spectacular destinations.
+        </p>
+
+        <a href="#tours" class="hero-button">
+            Explore Group Tours
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="tour-search">
+
+    <div class="search-title">
+        <span>Find Your Adventure</span>
+        <h2>Explore Group Tours</h2>
+    </div>
+
+
+    <div class="search-fields">
+
+        <div class="search-field">
+            <label>Destination</label>
+
+            <select>
+                <option>All Destinations</option>
+                <option>Maasai Mara</option>
+                <option>Lake Nakuru</option>
+                <option>Tsavo</option>
+                <option>Ol Donyo Sabuk</option>
+                <option>Samburu</option>
+            </select>
+        </div>
+
+
+        <div class="search-field">
+            <label>Duration</label>
+
+            <select>
+                <option>Any Duration</option>
+                <option>1 - 2 Days</option>
+                <option>3 - 4 Days</option>
+                <option>5 - 7 Days</option>
+                <option>8+ Days</option>
+            </select>
+        </div>
+
+
+        <div class="search-field">
+            <label>Budget</label>
+
+            <select>
+                <option>Any Budget</option>
+                <option>Below KSh 10,000</option>
+                <option>KSh 10,000 - 25,000</option>
+                <option>KSh 25,000 - 50,000</option>
+                <option>Above KSh 50,000</option>
+            </select>
+        </div>
+
+
+        <button class="search-btn">
+            🔍 Search Tours
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<section class="tours-section" id="tours">
+
+    <div class="section-heading">
+
+        <div>
+            <span>OUR COLLECTION</span>
+            <h2>Popular Group Tours</h2>
+        </div>
+
+        <p>
+            Travel with like-minded adventurers and discover
+            some of Kenya's most incredible destinations.
+        </p>
+
+    </div>
+
+
+    <div class="tour-layout">
+
+
+        <!-- FILTER SIDEBAR -->
+
+        <aside class="filters">
+
+            <div class="filter-header">
+                <h3>Filter Tours</h3>
+                <button>Reset</button>
+            </div>
+
+
+            <div class="filter-group">
+
+                <h4>Destinations</h4>
+
+                <label>
+                    <input type="checkbox">
+                    Maasai Mara
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Lake Nakuru
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Tsavo
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Samburu
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Ol Donyo Sabuk
+                </label>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <h4>Tour Type</h4>
+
+                <label>
+                    <input type="checkbox">
+                    Wildlife Safari
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Camping
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Road Trip
+                </label>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <h4>Price Range</h4>
+
+                <label>
+                    <input type="radio" name="price">
+                    Under KSh 10,000
+                </label>
+
+                <label>
+                    <input type="radio" name="price">
+                    KSh 10,000 - 25,000
+                </label>
+
+                <label>
+                    <input type="radio" name="price">
+                    KSh 25,000+
+                </label>
+
+            </div>
+
+        </aside>
+
+
+        <!-- TOUR CARDS -->
+
+        <div class="tour-results">
+
+            <div class="results-top">
+
+                <div>
+                    <strong>6 Group Adventures</strong>
+                    <span> available for you</span>
+                </div>
+
+                <select class="sort-select">
+                    <option>Recommended</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                </select>
+
+            </div>
+
+
+            <div class="tour-grid">
+
+
+                <!-- TOUR 1 -->
+
+                <article class="tour-card">
+
+                    <div class="tour-image">
+
+                        <img src="{{ url_for('static',
+                        filename='photos/parks/maasai_mara.jpeg') }}"
+                        alt="Maasai Mara Safari">
+
+                        <span class="tour-badge">
+                            POPULAR
+                        </span>
+
+                    </div>
+
+
+                    <div class="tour-info">
+
+                        <div class="tour-location">
+                            📍 Maasai Mara
+                        </div>
+
+                        <h3>
+                            Maasai Mara Group Safari
+                        </h3>
+
+                        <p>
+                            Experience the Big Five and the
+                            breathtaking landscapes of the Mara.
+                        </p>
+
+
+                        <div class="tour-details">
+
+                            <span>🕒 3 Days</span>
+                            <span>👥 Group Safari</span>
+
+                        </div>
+
+
+                        <div class="tour-bottom">
+
+                            <div class="price">
+                                <small>From</small>
+                                <strong>KSh 15,000</strong>
+                            </div>
+
+                            <a href="{{ url_for('booking') }}"
+                               class="view-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TOUR 2 -->
+
+                <article class="tour-card">
+
+                    <div class="tour-image">
+
+                        <img src="{{ url_for('static',
+                        filename='photos/parks/l_nakuru.jpeg') }}"
+                        alt="Lake Nakuru Safari">
+
+                        <span class="tour-badge">
+                            BEST VALUE
+                        </span>
+
+                    </div>
+
+
+                    <div class="tour-info">
+
+                        <div class="tour-location">
+                            📍 Lake Nakuru
+                        </div>
+
+                        <h3>
+                            Lake Nakuru Wildlife Escape
+                        </h3>
+
+                        <p>
+                            Discover flamingos, rhinos and
+                            incredible wildlife landscapes.
+                        </p>
+
+
+                        <div class="tour-details">
+
+                            <span>🕒 2 Days</span>
+                            <span>👥 Group Safari</span>
+
+                        </div>
+
+
+                        <div class="tour-bottom">
+
+                            <div class="price">
+                                <small>From</small>
+                                <strong>KSh 10,000</strong>
+                            </div>
+
+                            <a href="{{ url_for('booking') }}"
+                               class="view-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TOUR 3 -->
+
+                <article class="tour-card">
+
+                    <div class="tour-image">
+
+                        <img src="{{ url_for('static',
+                        filename='photos/maasaimara.jpg') }}"
+                        alt="Kenya Safari">
+
+                        <span class="tour-badge">
+                            FEATURED
+                        </span>
+
+                    </div>
+
+
+                    <div class="tour-info">
+
+                        <div class="tour-location">
+                            📍 Kenya
+                        </div>
+
+                        <h3>
+                            Kenya Wildlife Adventure
+                        </h3>
+
+                        <p>
+                            A memorable group adventure through
+                            Kenya's famous wildlife destinations.
+                        </p>
+
+
+                        <div class="tour-details">
+
+                            <span>🕒 5 Days</span>
+                            <span>👥 Group Safari</span>
+
+                        </div>
+
+
+                        <div class="tour-bottom">
+
+                            <div class="price">
+                                <small>From</small>
+                                <strong>KSh 25,000</strong>
+                            </div>
+
+                            <a href="{{ url_for('booking') }}"
+                               class="view-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TOUR 4 -->
+
+                <article class="tour-card">
+
+                    <div class="tour-image">
+
+                        <img src="{{ url_for('static',
+                        filename='photos/2.jpeg') }}"
+                        alt="Kenya Group Tour">
+
+                    </div>
+
+
+                    <div class="tour-info">
+
+                        <div class="tour-location">
+                            📍 Tsavo
+                        </div>
+
+                        <h3>
+                            Tsavo Group Explorer
+                        </h3>
+
+                        <p>
+                            Explore the dramatic landscapes and
+                            wildlife of Tsavo National Park.
+                        </p>
+
+
+                        <div class="tour-details">
+
+                            <span>🕒 3 Days</span>
+                            <span>👥 Group Safari</span>
+
+                        </div>
+
+
+                        <div class="tour-bottom">
+
+                            <div class="price">
+                                <small>From</small>
+                                <strong>KSh 18,000</strong>
+                            </div>
+
+                            <a href="{{ url_for('booking') }}"
+                               class="view-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TOUR 5 -->
+
+                <article class="tour-card">
+
+                    <div class="tour-image">
+
+                        <img src="{{ url_for('static',
+                        filename='photos/private_vehicles/9.jpeg') }}"
+                        alt="Safari Adventure">
+
+                        <span class="tour-badge">
+                            NEW
+                        </span>
+
+                    </div>
+
+
+                    <div class="tour-info">
+
+                        <div class="tour-location">
+                            📍 Samburu
+                        </div>
+
+                        <h3>
+                            Samburu Discovery Tour
+                        </h3>
+
+                        <p>
+                            Discover unique wildlife and the
+                            beautiful northern landscapes.
+                        </p>
+
+
+                        <div class="tour-details">
+
+                            <span>🕒 4 Days</span>
+                            <span>👥 Group Safari</span>
+
+                        </div>
+
+
+                        <div class="tour-bottom">
+
+                            <div class="price">
+                                <small>From</small>
+                                <strong>KSh 22,000</strong>
+                            </div>
+
+                            <a href="{{ url_for('booking') }}"
+                               class="view-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TOUR 6 -->
+
+                <article class="tour-card">
+
+                    <div class="tour-image">
+
+                        <img src="{{ url_for('static',
+                        filename='photos/parks/maasai_mara.jpeg') }}"
+                        alt="Kenya Camping Safari">
+
+                        <span class="tour-badge">
+                            CAMPING
+                        </span>
+
+                    </div>
+
+
+                    <div class="tour-info">
+
+                        <div class="tour-location">
+                            📍 Kenya
+                        </div>
+
+                        <h3>
+                            Kenya Camping Adventure
+                        </h3>
+
+                        <p>
+                            Combine wildlife, camping and
+                            unforgettable outdoor experiences.
+                        </p>
+
+
+                        <div class="tour-details">
+
+                            <span>🕒 4 Days</span>
+                            <span>⛺ Camping</span>
+
+                        </div>
+
+
+                        <div class="tour-bottom">
+
+                            <div class="price">
+                                <small>From</small>
+                                <strong>KSh 20,000</strong>
+                            </div>
+
+                            <a href="{{ url_for('booking') }}"
+                               class="view-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- PAGINATION -->
+
+            <div class="pagination">
+
+                <button class="page-arrow">‹</button>
+
+                <button class="page active">1</button>
+                <button class="page">2</button>
+                <button class="page">3</button>
+
+                <button class="page-arrow">›</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="why-group">
+
+    <div class="why-heading">
+
+        <span>TRAVEL WITH CONFIDENCE</span>
+
+        <h2>
+            Why Choose Our Group Tours?
+        </h2>
+
+        <p>
+            We make it easy to explore Kenya, meet new people
+            and create unforgettable memories.
+        </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <div class="why-icon">🦁</div>
+            <h3>Amazing Destinations</h3>
+            <p>
+                Visit Kenya's most spectacular wildlife
+                and natural destinations.
+            </p>
+        </div>
+
+
+        <div class="why-card">
+            <div class="why-icon">💰</div>
+            <h3>Affordable Packages</h3>
+            <p>
+                Share travel costs and enjoy great
+                experiences at competitive prices.
+            </p>
+        </div>
+
+
+        <div class="why-card">
+            <div class="why-icon">🤝</div>
+            <h3>Meet Fellow Travelers</h3>
+            <p>
+                Make new connections while travelling
+                with people who share your interests.
+            </p>
+        </div>
+
+
+        <div class="why-card">
+            <div class="why-icon">🛡️</div>
+            <h3>Travel With Confidence</h3>
+            <p>
+                Enjoy organized trips with support
+                throughout your adventure.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+            <h3>Ngary's Tours</h3>
+
+            <p>
+                Creating unforgettable travel experiences
+                across Kenya.
+            </p>
+        </div>
+
+
+        <div>
+            <h4>Quick Links</h4>
+
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('group_tours') }}">Group Tours</a>
+            <a href="{{ url_for('solo_tours') }}">Solo Tours</a>
+            <a href="{{ url_for('events') }}">Events</a>
+        </div>
+
+
+        <div>
+            <h4>Contact</h4>
+
+            <p>📞 +254 181 707 827</p>
+
+            <a href="https://wa.me/254181707827"
+               target="_blank">
+                💬 WhatsApp Us
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        © 2026 Ngary's Tour and Travel Adventures.
+        All Rights Reserved.
+    </div>
+
+</footer>
+
+
+</body>
+</html>

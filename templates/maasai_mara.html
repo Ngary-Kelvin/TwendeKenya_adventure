@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maasai Mara | Ngary's Tour and Travel Adventures</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='maasai_mara.css') }}">
+</head>
+
+<body>
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="top-bar">
+
+    <div class="top-left">
+        <a href="mailto:ngarytours@gmail.com">
+            ✉ ngarytours@gmail.com
+        </a>
+
+        <a href="https://wa.me/254181707827"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            💬 WhatsApp
+        </a>
+    </div>
+
+    <div class="top-right">
+
+        <span>☎ +254 181 707 827</span>
+
+        <span>KES</span>
+
+        <span>🇬🇧 English</span>
+
+        <a href="{{ url_for('login') }}">
+            Sign In
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="main-header">
+
+    <a href="{{ url_for('index') }}" class="brand">
+
+        <img src="{{ url_for('static',
+                    filename='photos/logo.png') }}"
+             alt="Ngary's Tours Logo">
+
+        <div class="brand-text">
+
+            <strong>Ngary's Tours</strong>
+
+            <span>
+                Tour & Travel Adventures
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <nav class="main-nav">
+
+        <a href="{{ url_for('index') }}">
+            HOME
+        </a>
+
+        <a href="{{ url_for('group_tours') }}">
+            GROUP TOURS
+        </a>
+
+        <a href="{{ url_for('solo_tours') }}">
+            SOLO TOURS
+        </a>
+
+        <a href="{{ url_for('events') }}">
+            EVENTS
+        </a>
+
+        <a href="{{ url_for('campsite') }}">
+            CAMPSITE
+        </a>
+
+        <a href="{{ url_for('maasai_mara') }}"
+           class="active">
+            DESTINATIONS
+        </a>
+
+    </nav>
+
+
+    <a href="{{ url_for('booking') }}"
+       class="book-button">
+
+        BOOK NOW
+
+    </a>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="mara-hero">
+
+    <img src="{{ url_for('static',
+                         filename='photos/maasaimara.jpg') }}"
+         alt="Maasai Mara landscape">
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            KENYA'S WILDLIFE GEM
+        </span>
+
+        <h1>
+            Maasai Mara
+        </h1>
+
+        <p>
+            Where the wild comes alive
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{{ url_for('booking') }}"
+               class="primary-button">
+
+                Plan Your Safari
+
+            </a>
+
+            <a href="https://wa.me/254181707827"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="whatsapp-button">
+
+                WhatsApp Us
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK FACTS ================= -->
+
+<section class="facts-section">
+
+    <div class="facts-container">
+
+        <div class="fact-card">
+
+            <div class="fact-icon">🦁</div>
+
+            <strong>Big Five</strong>
+
+            <span>
+                Incredible wildlife
+            </span>
+
+        </div>
+
+
+        <div class="fact-card">
+
+            <div class="fact-icon">🦓</div>
+
+            <strong>Great Migration</strong>
+
+            <span>
+                Seasonal spectacle
+            </span>
+
+        </div>
+
+
+        <div class="fact-card">
+
+            <div class="fact-icon">🌅</div>
+
+            <strong>Golden Sunsets</strong>
+
+            <span>
+                Endless savannah views
+            </span>
+
+        </div>
+
+
+        <div class="fact-card">
+
+            <div class="fact-icon">📍</div>
+
+            <strong>Southwestern Kenya</strong>
+
+            <span>
+                Iconic safari destination
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INTRODUCTION ================= -->
+
+<section class="about-section">
+
+    <div class="about-image">
+
+        <img src="{{ url_for('static',
+                             filename='photos/maasai_mara/4.jpeg') }}"
+             alt="Wildlife in Maasai Mara">
+
+        <div class="image-caption">
+            Experience Kenya's incredible wildlife
+        </div>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <span class="section-label">
+            DISCOVER THE MARA
+        </span>
+
+        <h2>
+            An unforgettable
+            <span>Safari Experience</span>
+        </h2>
+
+        <p>
+            Maasai Mara is a wildlife paradise in southwestern
+            Kenya. It is famed for the Great Migration, when
+            millions of wildebeest, zebras and gazelles move
+            across the region.
+        </p>
+
+        <p>
+            The reserve offers thrilling safari experiences,
+            spectacular landscapes and opportunities to see
+            the Big Five and many other species.
+        </p>
+
+        <p>
+            Beyond the wildlife, visitors can experience the
+            beauty of the vast savannahs, Maasai culture and
+            unforgettable African sunsets.
+        </p>
+
+
+        <a href="{{ url_for('booking') }}"
+           class="dark-button">
+
+            Start Your Adventure →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WILDLIFE ================= -->
+
+<section class="wildlife-section">
+
+    <div class="section-heading">
+
+        <span>
+            WHAT YOU CAN EXPERIENCE
+        </span>
+
+        <h2>
+            Discover the Magic of Maasai Mara
+        </h2>
+
+        <p>
+            Every journey through the Mara offers the
+            possibility of a new and unforgettable experience.
+        </p>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+        <div class="experience-card">
+
+            <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/4.jpeg') }}"
+                 alt="Lion in Maasai Mara">
+
+            <div class="experience-content">
+
+                <span>WILDLIFE</span>
+
+                <h3>
+                    The Big Five
+                </h3>
+
+                <p>
+                    Explore the Mara's incredible wildlife
+                    and experience some of Africa's most
+                    iconic animals.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/7.jpeg') }}"
+                 alt="Wildebeest migration">
+
+            <div class="experience-content">
+
+                <span>MIGRATION</span>
+
+                <h3>
+                    The Great Migration
+                </h3>
+
+                <p>
+                    Witness one of nature's most spectacular
+                    wildlife movements across the savannah.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/1.jpeg') }}"
+                 alt="Maasai Mara landscape">
+
+            <div class="experience-content">
+
+                <span>LANDSCAPE</span>
+
+                <h3>
+                    Endless Savannah
+                </h3>
+
+                <p>
+                    Enjoy breathtaking views stretching
+                    across the Mara's beautiful landscape.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery-section">
+
+    <div class="section-heading">
+
+        <span>
+            EXPERIENCE THE MARA
+        </span>
+
+        <h2>
+            Moments From The Wild
+        </h2>
+
+    </div>
+
+
+    <div class="mara-gallery">
+
+        <div class="gallery-item large">
+
+            <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/1.jpeg') }}"
+                 alt="Maasai Mara">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/2.jpeg') }}"
+                 alt="Maasai Mara safari">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/4.jpeg') }}"
+                 alt="Maasai Mara wildlife">
+
+        </div>
+
+
+        <div class="gallery-item wide">
+
+            <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/7.jpeg') }}"
+                 alt="Wildebeest migration">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="mara-cta">
+
+    <div class="cta-overlay"></div>
+
+    <div class="cta-content">
+
+        <span>
+            YOUR KENYAN ADVENTURE AWAITS
+        </span>
+
+        <h2>
+            Ready to Experience Maasai Mara?
+        </h2>
+
+        <p>
+            Let Ngary's Tour and Travel Adventures
+            help you plan an unforgettable safari.
+        </p>
+
+
+        <div class="cta-buttons">
+
+            <a href="{{ url_for('booking') }}"
+               class="primary-button">
+
+                BOOK YOUR SAFARI
+
+            </a>
+
+            <a href="https://wa.me/254181707827"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="whatsapp-button">
+
+                CHAT ON WHATSAPP
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-column">
+
+            <h3>
+                Ngary's Tours
+            </h3>
+
+            <p>
+                Discover Kenya through unforgettable
+                safari adventures, wildlife experiences
+                and beautiful destinations.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="{{ url_for('index') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('group_tours') }}">
+                Group Tours
+            </a>
+
+            <a href="{{ url_for('solo_tours') }}">
+                Solo Tours
+            </a>
+
+            <a href="{{ url_for('events') }}">
+                Events
+            </a>
+
+            <a href="{{ url_for('campsite') }}">
+                Campsite
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Destinations
+            </h4>
+
+            <a href="{{ url_for('maasai_mara') }}">
+                Maasai Mara
+            </a>
+
+            <a href="{{ url_for('lake_nakuru') }}">
+                Lake Nakuru
+            </a>
+
+            <a href="{{ url_for('oldonyo_sabuk') }}">
+                Ol Donyo Sabuk
+            </a>
+
+            <a href="{{ url_for('tsavo') }}">
+                Tsavo
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Contact Us
+            </h4>
+
+            <p>
+                ☎ +254 181 707 827
+            </p>
+
+            <p>
+                ✉ ngarytours@gmail.com
+            </p>
+
+            <a href="https://wa.me/254181707827"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                💬 WhatsApp Us
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Ngary's Tour and Travel Adventures.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>

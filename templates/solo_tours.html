@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Solo Tours | Ngary's Tour and Travel Adventures</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='solo_tours.css') }}">
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+
+        <div class="top-left">
+            <span>✉ info@ngarystours.com</span>
+            <span>📞 +254 181 707 827</span>
+        </div>
+
+        <div class="top-right">
+            <span>USD</span>
+            <span>English</span>
+
+            <a href="{{ url_for('login') }}">Sign In</a>
+        </div>
+
+    </div>
+
+
+    <!-- ================= NAVIGATION ================= -->
+    <header class="main-header">
+
+        <div class="logo-area">
+
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='photos/logo.png') }}"
+                     alt="Ngary's Tour and Travel Adventures">
+            </a>
+
+            <div class="brand-name">
+                <h2>Ngary's</h2>
+                <span>Tour & Travel Adventures</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="{{ url_for('index') }}">HOME</a>
+
+            <a href="{{ url_for('group_tours') }}">GROUP TOURS</a>
+
+            <a href="{{ url_for('solo_tours') }}" class="active">
+                SOLO TOURS
+            </a>
+
+            <a href="{{ url_for('events') }}">EVENTS</a>
+
+            <a href="{{ url_for('campsite') }}">CAMPSITE</a>
+
+            <a href="{{ url_for('maasai_mara') }}">
+                DESTINATIONS
+            </a>
+
+            <a href="{{ url_for('booking') }}" class="book-button">
+                BOOK NOW
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+    <section class="solo-hero">
+
+        <div class="hero-overlay">
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    SOLO SAFARIS • KENYA
+                </span>
+
+                <h1>
+                    Your Journey.<br>
+                    Your Pace.<br>
+                    <strong>Your Adventure.</strong>
+                </h1>
+
+                <p>
+                    Discover Kenya on your own terms with a personalized
+                    safari experience designed around your interests,
+                    schedule and sense of adventure.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="{{ url_for('registration') }}"
+                       class="primary-button">
+                        PLAN YOUR SAFARI
+                    </a>
+
+                    <a href="https://wa.me/254181707827"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="whatsapp-button">
+                        CHAT ON WHATSAPP
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= INTRO ================= -->
+    <section class="intro-section">
+
+        <div class="section-heading">
+
+            <span>TRAVEL YOUR WAY</span>
+
+            <h2>
+                Experience Kenya on Your Own Terms
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="intro-content">
+
+            <div class="intro-text">
+
+                <p>
+                    Solo travel gives you the freedom to experience Kenya
+                    at your own pace. Whether you want to spend more time
+                    watching wildlife, explore local culture or simply
+                    enjoy the beauty of the Kenyan landscape, your journey
+                    can be built around you.
+                </p>
+
+                <p>
+                    At Ngary's Tour and Travel Adventures, we help solo
+                    travelers create memorable experiences while providing
+                    the guidance and support needed throughout the journey.
+                </p>
+
+                <a href="{{ url_for('generate_quotation') }}"
+                   class="outline-button">
+                    GET A QUOTATION
+                </a>
+
+            </div>
+
+
+            <div class="intro-image">
+
+                <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/4.jpeg') }}"
+                     alt="Solo safari experience">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BENEFITS ================= -->
+    <section class="benefits-section">
+
+        <div class="section-heading light-heading">
+
+            <span>WHY TRAVEL SOLO?</span>
+
+            <h2>
+                Freedom to Explore
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="benefits-grid">
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">01</div>
+
+                <h3>Flexible Itinerary</h3>
+
+                <p>
+                    Plan your adventure around your preferred schedule,
+                    destinations and activities.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">02</div>
+
+                <h3>Personal Experience</h3>
+
+                <p>
+                    Enjoy an experience designed around your interests
+                    rather than following a fixed group itinerary.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">03</div>
+
+                <h3>Local Guidance</h3>
+
+                <p>
+                    Explore Kenya with knowledgeable local support and
+                    practical assistance throughout your adventure.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">04</div>
+
+                <h3>Your Own Pace</h3>
+
+                <p>
+                    Spend more time where you want and enjoy the journey
+                    without feeling rushed.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= DESTINATIONS ================= -->
+    <section class="destinations-section">
+
+        <div class="section-heading">
+
+            <span>WHERE WILL YOU GO?</span>
+
+            <h2>
+                Popular Solo Safari Destinations
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="destination-grid">
+
+
+            <!-- Maasai Mara -->
+            <a href="{{ url_for('maasai_mara') }}"
+               class="destination-card">
+
+                <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/7.jpeg') }}"
+                     alt="Maasai Mara">
+
+                <div class="destination-overlay">
+
+                    <span>WILDLIFE &amp; MIGRATION</span>
+
+                    <h3>Maasai Mara</h3>
+
+                    <p>
+                        Experience Kenya's legendary wildlife
+                        and spectacular savannah landscapes.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- Lake Nakuru -->
+            <a href="{{ url_for('lake_nakuru') }}"
+               class="destination-card">
+
+                <img src="{{ url_for('static',
+                         filename='photos/lake_nakuru.jpg') }}"
+                     alt="Lake Nakuru">
+
+                <div class="destination-overlay">
+
+                    <span>LAKE &amp; WILDLIFE</span>
+
+                    <h3>Lake Nakuru</h3>
+
+                    <p>
+                        Discover beautiful landscapes and
+                        remarkable wildlife around the lake.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- Tsavo -->
+            <a href="{{ url_for('tsavo') }}"
+               class="destination-card">
+
+                <img src="{{ url_for('static',
+                         filename='photos/tsavo.jpg') }}"
+                     alt="Tsavo">
+
+                <div class="destination-overlay">
+
+                    <span>WILDERNESS</span>
+
+                    <h3>Tsavo</h3>
+
+                    <p>
+                        Explore one of Kenya's great wilderness
+                        destinations.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- Ol Donyo Sabuk -->
+            <a href="{{ url_for('oldonyo_sabuk') }}"
+               class="destination-card">
+
+                <img src="{{ url_for('static',
+                         filename='photos/oldonyo.jpg') }}"
+                     alt="Ol Donyo Sabuk">
+
+                <div class="destination-overlay">
+
+                    <span>ADVENTURE</span>
+
+                    <h3>Ol Donyo Sabuk</h3>
+
+                    <p>
+                        Enjoy nature, scenic views and an
+                        exciting escape from the city.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="process-section">
+
+        <div class="section-heading">
+
+            <span>YOUR ADVENTURE STARTS HERE</span>
+
+            <h2>
+                Plan Your Solo Safari
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-card">
+
+                <div class="process-number">01</div>
+
+                <h3>Choose Your Destination</h3>
+
+                <p>
+                    Select the Kenyan destination or combination
+                    of destinations you would like to explore.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">02</div>
+
+                <h3>Customize Your Trip</h3>
+
+                <p>
+                    Tell us your preferred duration, accommodation,
+                    transport and activities.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">03</div>
+
+                <h3>Receive Your Quotation</h3>
+
+                <p>
+                    Get a quotation based on your selected safari
+                    preferences.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">04</div>
+
+                <h3>Start Your Adventure</h3>
+
+                <p>
+                    Get ready to explore Kenya and create
+                    unforgettable memories.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= GALLERY ================= -->
+    <section class="gallery-section">
+
+        <div class="section-heading">
+
+            <span>KENYA AWAITS</span>
+
+            <h2>
+                Moments From the Wild
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item large">
+                <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/1.jpeg') }}"
+                     alt="Kenya safari">
+            </div>
+
+            <div class="gallery-item">
+                <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/2.jpeg') }}"
+                     alt="Safari landscape">
+            </div>
+
+            <div class="gallery-item">
+                <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/4.jpeg') }}"
+                     alt="Wildlife safari">
+            </div>
+
+            <div class="gallery-item">
+                <img src="{{ url_for('static',
+                         filename='photos/maasai_mara/7.jpeg') }}"
+                     alt="Wildebeest migration">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CTA ================= -->
+    <section class="solo-cta">
+
+        <div class="cta-content">
+
+            <span>
+                YOUR ADVENTURE IS WAITING
+            </span>
+
+            <h2>
+                Ready to Explore Kenya?
+            </h2>
+
+            <p>
+                Tell us what you want to experience and
+                let's create a safari that fits your journey.
+            </p>
+
+            <div class="cta-buttons">
+
+                <a href="{{ url_for('generate_quotation') }}"
+                   class="primary-button">
+                    GET YOUR QUOTATION
+                </a>
+
+                <a href="https://wa.me/254181707827"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="whatsapp-button">
+                    WHATSAPP US
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <img src="{{ url_for('static',
+                         filename='photos/logo.png') }}"
+                     alt="Ngary's Tour and Travel Adventures">
+
+                <h3>
+                    Ngary's Tour &amp; Travel Adventures
+                </h3>
+
+                <p>
+                    Discover Kenya. Experience the wild.
+                    Create memories that last a lifetime.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>QUICK LINKS</h4>
+
+                <a href="{{ url_for('index') }}">Home</a>
+
+                <a href="{{ url_for('group_tours') }}">
+                    Group Tours
+                </a>
+
+                <a href="{{ url_for('solo_tours') }}">
+                    Solo Tours
+                </a>
+
+                <a href="{{ url_for('booking') }}">
+                    Book Now
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>DESTINATIONS</h4>
+
+                <a href="{{ url_for('maasai_mara') }}">
+                    Maasai Mara
+                </a>
+
+                <a href="{{ url_for('lake_nakuru') }}">
+                    Lake Nakuru
+                </a>
+
+                <a href="{{ url_for('tsavo') }}">
+                    Tsavo
+                </a>
+
+                <a href="{{ url_for('oldonyo_sabuk') }}">
+                    Ol Donyo Sabuk
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>CONTACT US</h4>
+
+                <p>📞 +254 181 707 827</p>
+
+                <a href="https://wa.me/254181707827"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="footer-whatsapp">
+                    WhatsApp Us
+                </a>
+
+                <p>📍 Nairobi, Kenya</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Ngary's Tour and Travel Adventures.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

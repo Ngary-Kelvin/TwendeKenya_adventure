@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ngary's Tour and Travel Adventures</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style1.css') }}">
+</head>
+
+<body>
+
+<!-- =========================================================
+     HERO / HEADER
+========================================================= -->
+<section class="hero">
+
+    <!-- Background collage -->
+    <div class="hero-collage">
+
+        <div class="collage-panel panel-1">
+            <img src="{{ url_for('static', filename='photos/2.jpeg') }}"
+                 alt="Kenya Safari">
+        </div>
+
+        <div class="collage-panel panel-2">
+            <img src="{{ url_for('static', filename='photos/parks/maasai_mara.jpeg') }}"
+                 alt="Maasai Mara">
+        </div>
+
+        <div class="collage-panel panel-3">
+            <img src="{{ url_for('static', filename='photos/maasaimara.jpg') }}"
+                 alt="Maasai Mara Safari">
+        </div>
+
+        <div class="collage-panel panel-4">
+            <img src="{{ url_for('static', filename='photos/private_vehicles/9.jpeg') }}"
+                 alt="Safari Vehicle">
+        </div>
+
+        <div class="collage-panel panel-5">
+            <img src="{{ url_for('static', filename='photos/parks/l_nakuru.jpeg') }}"
+                 alt="Lake Nakuru">
+        </div>
+
+    </div>
+
+
+    <!-- Dark overlay -->
+    <div class="hero-overlay"></div>
+
+
+    <!-- =====================================================
+         TOP INFORMATION BAR
+    ====================================================== -->
+    <div class="top-bar">
+
+        <div class="top-left">
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="YouTube">▶</a>
+            </div>
+
+            <span class="divider"></span>
+
+            <a href="mailto:ngarytours@gmail.com">
+                ngarytours@gmail.com
+            </a>
+
+        </div>
+
+
+        <div class="top-right">
+
+            <span>
+                ☎ +254 181707827
+            </span>
+
+            <a href="https://wa.me/254181707827"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="whatsapp-link">
+
+    <img src="{{ url_for('static', filename='photos/whatsapp.png') }}"
+         alt="WhatsApp">
+
+    <span>WhatsApp +254 181 707 827</span>
+</a>
+
+            <span class="top-option">
+                KES ▾
+            </span>
+
+            <span class="top-option">
+                🇬🇧 English ▾
+            </span>
+
+            <span class="top-option">
+                ♡
+            </span>
+
+            <a href="/login" class="account-link">
+                ♙ Sign in / Create account
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN NAVIGATION
+    ====================================================== -->
+    <header class="main-header">
+
+        <a href="/" class="brand">
+
+            <img src="{{ url_for('static', filename='photos/logo.png') }}"
+                 alt="Ngary's Tour and Travel Adventures">
+
+            <span>Ngary's Tours</span>
+
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="/" class="active">HOME</a>
+
+            <a href="/group_tours">
+                GROUP TOURS
+            </a>
+
+            <a href="/solo_tours">
+                SOLO TOURS
+            </a>
+
+            <a href="/events">
+                EVENTS
+            </a>
+
+            <a href="/campsite">
+                CAMPSITE
+            </a>
+
+            <a href="/maasai_mara">
+                DESTINATIONS
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a href="/booking" class="nav-book">
+                BOOK NOW
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO CONTENT
+    ====================================================== -->
+    <div class="hero-content">
+
+        <p class="hero-small-title">
+            WELCOME TO NGARY'S TOUR & TRAVEL ADVENTURES
+        </p>
+
+        <h1>
+            Explore Kenya's Wild,
+            <br>
+            Remote & Beautiful
+            <br>
+            Destinations
+        </h1>
+
+        <p class="hero-description">
+            We plan unforgettable journeys to Kenya's most
+            beautiful national parks, wildlife destinations
+            and hidden adventures.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="/group_tours" class="hero-btn primary-btn">
+                <span>♧</span>
+                GROUP TOURS
+            </a>
+
+            <a href="/registration" class="hero-btn secondary-btn">
+                <span>♧</span>
+                PLAN YOUR SAFARI
+            </a>
+
+            <a href="/generate_quotation" class="hero-btn quotation-btn">
+                GET QUOTATION
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DESTINATIONS
+========================================================= -->
+<section class="destinations-section">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            DISCOVER KENYA
+        </p>
+
+        <h2>
+            Explore Our Safari Destinations
+        </h2>
+
+        <p>
+            Discover some of Kenya's most spectacular wildlife
+            destinations and natural landscapes.
+        </p>
+
+    </div>
+
+
+    <div class="destination-grid">
+
+
+        <!-- Maasai Mara -->
+        <a href="/maasai_mara" class="destination-card">
+
+            <img src="{{ url_for('static', filename='photos/parks/maasai_mara.jpeg') }}"
+                 alt="Maasai Mara">
+
+            <div class="destination-overlay">
+
+                <span>SAFARI DESTINATION</span>
+
+                <h3>
+                    Maasai Mara
+                </h3>
+
+                <p>
+                    Wildlife, Big Five and unforgettable
+                    safari experiences.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- Lake Nakuru -->
+        <a href="/lake_nakuru" class="destination-card">
+
+            <img src="{{ url_for('static', filename='photos/parks/l_nakuru.jpeg') }}"
+                 alt="Lake Nakuru">
+
+            <div class="destination-overlay">
+
+                <span>WILDLIFE & NATURE</span>
+
+                <h3>
+                    Lake Nakuru
+                </h3>
+
+                <p>
+                    Discover beautiful landscapes and
+                    incredible wildlife.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- Ol Donyo Sabuk -->
+        <a href="/oldonyo_sabuk" class="destination-card">
+
+            <img src="{{ url_for('static', filename='photos/parks/ol_donyo_sabuk.jpeg') }}"
+                 alt="Ol Donyo Sabuk">
+
+            <div class="destination-overlay">
+
+                <span>ADVENTURE</span>
+
+                <h3>
+                    Ol Donyo Sabuk
+                </h3>
+
+                <p>
+                    Explore Kenya's beautiful mountain
+                    landscapes and wildlife.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- Tsavo -->
+        <a href="/tsavo" class="destination-card">
+
+            <img src="{{ url_for('static', filename='photos/parks/tsavo.jpeg') }}"
+                 alt="Tsavo National Park">
+
+            <div class="destination-overlay">
+
+                <span>WILDERNESS</span>
+
+                <h3>
+                    Tsavo National Park
+                </h3>
+
+                <p>
+                    Experience one of Kenya's great
+                    wilderness destinations.
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRAVEL SERVICES
+========================================================= -->
+<section class="services-section">
+
+    <div class="section-heading light-heading">
+
+        <p class="section-label">
+            TRAVEL WITH US
+        </p>
+
+        <h2>
+            Safari Experiences
+        </h2>
+
+        <p>
+            Choose the style of adventure that suits you.
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <a href="/shared-safari-vehicles"
+           class="service-card">
+
+            <img src="{{ url_for('static', filename='photos/shared_vihicles/2.jpeg') }}"
+                 alt="Shared Safari Vehicles">
+
+            <div class="service-content">
+
+                <span>TRANSPORT</span>
+
+                <h3>
+                    Shared Safari Vehicles
+                </h3>
+
+                <p>
+                    Affordable and comfortable safari
+                    transport for groups.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="/private-safari-vehicles"
+           class="service-card">
+
+            <img src="{{ url_for('static', filename='photos/private_vehicles/9.jpeg') }}"
+                 alt="Private Safari Vehicles">
+
+            <div class="service-content">
+
+                <span>TRANSPORT</span>
+
+                <h3>
+                    Private Safari Vehicles
+                </h3>
+
+                <p>
+                    Enjoy a more private and flexible
+                    safari experience.
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY CHOOSE US
+========================================================= -->
+<section class="why-section">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            WHY NGARY'S TOURS
+        </p>
+
+        <h2>
+            Your Adventure Starts Here
+        </h2>
+
+    </div>
+
+
+    <div class="reasons-container">
+
+
+        <div class="reason-card">
+
+            <div class="reason-icon">
+                ★
+            </div>
+
+            <h3>
+                Affordable Packages
+            </h3>
+
+            <p>
+                Enjoy amazing safari experiences at
+                flexible and affordable prices.
+            </p>
+
+        </div>
+
+
+        <div class="reason-card">
+
+            <div class="reason-icon">
+                ✓
+            </div>
+
+            <h3>
+                Professional Guides
+            </h3>
+
+            <p>
+                Our experienced guides help make your
+                adventure safe and memorable.
+            </p>
+
+        </div>
+
+
+        <div class="reason-card">
+
+            <div class="reason-icon">
+                🚙
+            </div>
+
+            <h3>
+                Comfortable Transport
+            </h3>
+
+            <p>
+                Choose between shared and private
+                safari transportation.
+            </p>
+
+        </div>
+
+
+        <div class="reason-card">
+
+            <div class="reason-icon">
+                ♥
+            </div>
+
+            <h3>
+                Customer Focused
+            </h3>
+
+            <p>
+                We focus on creating memorable travel
+                experiences for our guests.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+<section class="stats-section">
+
+    <div class="stat-box">
+        <strong>500+</strong>
+        <span>Happy Travelers</span>
+    </div>
+
+    <div class="stat-box">
+        <strong>50+</strong>
+        <span>Safari Packages</span>
+    </div>
+
+    <div class="stat-box">
+        <strong>10+</strong>
+        <span>Destinations</span>
+    </div>
+
+    <div class="stat-box">
+        <strong>5+</strong>
+        <span>Years Experience</span>
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="main-footer">
+
+    <div class="footer-container">
+
+
+        <div class="footer-column">
+
+            <h3>
+                Ngary's Tours
+            </h3>
+
+            <p>
+                Discover Kenya through unforgettable
+                safari adventures, wildlife experiences
+                and beautiful destinations.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="/">Home</a>
+            <a href="/group_tours">Group Tours</a>
+            <a href="/solo_tours">Solo Tours</a>
+            <a href="/events">Events</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Destinations
+            </h3>
+
+            <a href="/maasai_mara">
+                Maasai Mara
+            </a>
+
+            <a href="/lake_nakuru">
+                Lake Nakuru
+            </a>
+
+            <a href="/oldonyo_sabuk">
+                Ol Donyo Sabuk
+            </a>
+
+            <a href="/tsavo">
+                Tsavo
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📞 +254 743 475 797
+            </p>
+
+            <p>
+                ✉ ngarytours@gmail.com
+            </p>
+
+            <p>
+                Kenya
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Ngary's Tour and Travel Adventures.
+            All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>

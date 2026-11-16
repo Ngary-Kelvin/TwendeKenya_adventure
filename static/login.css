@@ -1,0 +1,418 @@
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.login-page {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background-image:
+        url("/static/photos/2.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.login-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(4, 25, 35, 0.72),
+            rgba(4, 25, 35, 0.78)
+        );
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.login-card {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    background: #ffffff;
+
+    padding: 38px 34px 30px;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.login-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 30px;
+}
+
+
+.login-header h1 {
+    margin: 0 0 7px;
+
+    color: #183b35;
+
+    font-size: 29px;
+
+    font-weight: 500;
+}
+
+
+.login-header p {
+    margin: 0;
+
+    color: #7b8790;
+
+    font-size: 14px;
+}
+
+
+.close-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 36px;
+
+    height: 36px;
+
+    color: #183b35;
+
+    font-size: 36px;
+
+    font-weight: 200;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+
+.close-button:hover {
+    color: #d39a27;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+.form-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #34454f;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.form-control {
+    display: block;
+
+    width: 100%;
+
+    height: 50px;
+
+    padding:
+        0 15px;
+
+    border:
+        1px solid #d5dde3;
+
+    border-radius: 2px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #333;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.form-control:focus {
+    border-color: #0878df;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 120, 223, 0.10);
+}
+
+
+.form-control::placeholder {
+    color: #9aa5ad;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-button {
+    display: block;
+
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 2px;
+
+    background: #0878df;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(8, 120, 223, 0.25);
+
+    transition: 0.2s;
+}
+
+
+.login-button:hover {
+    background: #066bc8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 18px rgba(8, 120, 223, 0.30);
+}
+
+
+/* =========================================================
+   SIGN UP
+========================================================= */
+
+.signup-section {
+    margin-top: 25px;
+
+    padding-top: 22px;
+
+    border-top:
+        1px solid #e5e9ec;
+
+    text-align: center;
+}
+
+
+.signup-section p {
+    margin: 0;
+
+    color: #424b52;
+
+    font-size: 14px;
+}
+
+
+.signup-section a {
+    color: #006dcc;
+
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+
+.signup-section a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   BACK HOME
+========================================================= */
+
+.back-home {
+    margin-top: 18px;
+
+    text-align: center;
+}
+
+
+.back-home a {
+    color: #75828b;
+
+    font-size: 13px;
+
+    text-decoration: none;
+}
+
+
+.back-home a:hover {
+    color: #183b35;
+}
+
+
+/* =========================================================
+   FLASH MESSAGES
+========================================================= */
+
+.flash-messages {
+    margin-bottom: 20px;
+}
+
+
+.alert {
+    padding: 11px 14px;
+
+    margin-bottom: 8px;
+
+    border-radius: 3px;
+
+    font-size: 13px;
+}
+
+
+.alert-success {
+    background: #dff3e4;
+
+    color: #216b35;
+}
+
+
+.alert-danger {
+    background: #f8d7da;
+
+    color: #842029;
+}
+
+
+.alert-warning {
+    background: #fff3cd;
+
+    color: #664d03;
+}
+
+
+.alert-info {
+    background: #cff4fc;
+
+    color: #055160;
+}
+
+
+/* =========================================================
+   FIELD ERRORS
+========================================================= */
+
+.field-error {
+    margin-top: 6px;
+
+    color: #c62828;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .login-page {
+        padding: 20px 15px;
+    }
+
+
+    .login-card {
+        padding: 30px 22px 25px;
+    }
+
+
+    .login-header h1 {
+        font-size: 25px;
+    }
+
+
+    .login-header p {
+        font-size: 13px;
+    }
+
+}

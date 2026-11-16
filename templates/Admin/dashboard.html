@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Ngary's Tours</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='admin.css') }}">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="admin-brand">
+
+            <img src="{{ url_for('static',
+                     filename='photos/logo.png') }}"
+                 alt="Logo">
+
+            <h2>Ngary's</h2>
+
+            <span>ADMIN PANEL</span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="{{ url_for('admin_dashboard') }}"
+               class="active">
+                Dashboard
+            </a>
+
+            <a href="#">
+                Pages
+            </a>
+
+            <a href="#">
+                Destinations
+            </a>
+
+            <a href="#">
+                Activities
+            </a>
+
+            <a href="#">
+                Tours
+            </a>
+
+            <a href="#">
+                Events
+            </a>
+
+            <a href="#">
+                Gallery
+            </a>
+
+            <a href="#">
+                Bookings
+            </a>
+
+            <a href="#">
+                Quotations
+            </a>
+
+            <a href="#">
+                Customers
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="{{ url_for('index') }}">
+                ← View Website
+            </a>
+
+            <a href="{{ url_for('logout') }}">
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <header class="admin-header">
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Welcome back, {{ current_user.name }}
+                </p>
+
+            </div>
+
+
+            <div class="admin-user">
+
+                <span>Administrator</span>
+
+            </div>
+
+        </header>
+
+
+        <!-- STATISTICS -->
+
+        <section class="statistics">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div>
+
+                    <span>Total Customers</span>
+
+                    <strong>
+                        {{ total_clients }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📋
+                </div>
+
+                <div>
+
+                    <span>Total Quotations</span>
+
+                    <strong>
+                        {{ total_quotations }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📸
+                </div>
+
+                <div>
+
+                    <span>Photos</span>
+
+                    <strong>0</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🦁
+                </div>
+
+                <div>
+
+                    <span>Activities</span>
+
+                    <strong>0</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+                    <span>MANAGEMENT</span>
+                    <h2>Quick Actions</h2>
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <a href="#" class="action-card">
+
+                    <div>📝</div>
+
+                    <h3>Edit Pages</h3>
+
+                    <p>
+                        Update website content.
+                    </p>
+
+                </a>
+
+
+                <a href="#" class="action-card">
+
+                    <div>📸</div>
+
+                    <h3>Upload Photo</h3>
+
+                    <p>
+                        Add photos to your website.
+                    </p>
+
+                </a>
+
+
+                <a href="#" class="action-card">
+
+                    <div>🦁</div>
+
+                    <h3>Add Activity</h3>
+
+                    <p>
+                        Create a new safari activity.
+                    </p>
+
+                </a>
+
+
+                <a href="#" class="action-card">
+
+                    <div>🗺️</div>
+
+                    <h3>Add Destination</h3>
+
+                    <p>
+                        Add a new destination.
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RECENT QUOTATIONS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+                    <span>RECENT ACTIVITY</span>
+                    <h2>Latest Quotations</h2>
+                </div>
+
+                <a href="{{ url_for('list_quotations') }}">
+                    View All
+                </a>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Customer</th>
+                            <th>Destination</th>
+                            <th>People</th>
+                            <th>Days</th>
+                            <th>Date</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                    {% for quotation in recent_quotations %}
+
+                        <tr>
+
+                            <td>
+                                {{ quotation.client.name }}
+                            </td>
+
+                            <td>
+                                {{ quotation.park_choice }}
+                            </td>
+
+                            <td>
+                                {{ quotation.num_people }}
+                            </td>
+
+                            <td>
+                                {{ quotation.num_days }}
+                            </td>
+
+                            <td>
+                                {{ quotation.created_at.strftime('%d %b %Y') }}
+                            </td>
+
+                        </tr>
+
+                    {% else %}
+
+                        <tr>
+
+                            <td colspan="5"
+                                class="empty">
+
+                                No quotations yet.
+
+                            </td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Ngary's Tour and Travel Adventures</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='login.css') }}">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="login-page">
+
+        <!-- Dark overlay -->
+        <div class="login-overlay"></div>
+
+
+        <!-- Login Card -->
+        <div class="login-card">
+
+            <!-- Header -->
+            <div class="login-header">
+
+                <div>
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your Ngary's Tours account</p>
+                </div>
+
+                <a href="/" class="close-button">
+                    ×
+                </a>
+
+            </div>
+
+
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    <div class="flash-messages">
+
+                        {% for category, message in messages %}
+
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+            {% endwith %}
+
+
+            <!-- Login Form -->
+            <form method="POST"
+                  action="{{ url_for('login') }}"
+                  class="login-form">
+
+                {{ form.hidden_tag() }}
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    {{ form.email.label(class="form-label") }}
+
+                    {{ form.email(
+                        class="form-control",
+                        placeholder="Email address"
+                    ) }}
+
+                    {% if form.email.errors %}
+
+                        <div class="field-error">
+
+                            {% for error in form.email.errors %}
+                                {{ error }}
+                            {% endfor %}
+
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    {{ form.password.label(class="form-label") }}
+
+                    {{ form.password(
+                        class="form-control",
+                        placeholder="Password"
+                    ) }}
+
+                    {% if form.password.errors %}
+
+                        <div class="field-error">
+
+                            {% for error in form.password.errors %}
+                                {{ error }}
+                            {% endfor %}
+
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Login Button -->
+                <button type="submit"
+                        class="login-button">
+
+                    LOG IN
+
+                </button>
+
+            </form>
+
+
+            <!-- Sign Up -->
+            <div class="signup-section">
+
+                <p>
+                    Don't have an account?
+                    <a href="{{ url_for('registration') }}">
+                        Sign Up
+                    </a>
+                </p>
+
+            </div>
+
+
+            <!-- Back to Website -->
+            <div class="back-home">
+
+                <a href="/">
+                    ← Back to Ngary's Tours
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

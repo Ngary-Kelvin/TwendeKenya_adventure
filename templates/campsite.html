@@ -1,0 +1,756 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campsite | Ngary Tour & Travel</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/campsite.css') }}">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="navbar">
+
+        <a href="{{ url_for('index') }}" class="logo">
+            Ngary <span>Tour & Travel</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="{{ url_for('index') }}">Home</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('group_tours') }}">Group Tours</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('solo_tours') }}">Solo Tours</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('campsite') }}" class="active">
+                    Campsite
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('events') }}">Events</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('booking') }}" class="book-btn">
+                    Book Now
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                CAMPING • WILDERNESS • ADVENTURE
+            </span>
+
+            <h1>
+                Sleep Under<br>
+                <span>The African Stars</span>
+            </h1>
+
+            <p>
+                Discover Kenya through unforgettable camping
+                experiences surrounded by wildlife, beautiful
+                landscapes and the magic of the African wilderness.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{{ url_for('booking') }}" class="btn primary-btn">
+                    Plan Your Adventure
+                </a>
+
+                <a href="#camping-options" class="btn outline-btn">
+                    Explore Campsites
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="scroll-indicator">
+            <span>SCROLL TO EXPLORE</span>
+            <div class="scroll-line"></div>
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section class="intro-section">
+
+        <div class="intro-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=1000&q=85"
+                alt="Camping in the wilderness">
+
+        </div>
+
+        <div class="intro-content">
+
+            <span class="section-label">
+                THE CAMPING EXPERIENCE
+            </span>
+
+            <h2>
+                Kenya Is Better<br>
+                When You Experience It Outdoors
+            </h2>
+
+            <p>
+                Camping gives you the opportunity to experience
+                Kenya beyond the ordinary. Wake up to beautiful
+                landscapes, spend your evenings around the campfire
+                and experience the wilderness from a completely
+                different perspective.
+            </p>
+
+            <p>
+                Whether you are travelling with friends, family,
+                colleagues or on your own, we can help you plan
+                a camping adventure that fits your journey.
+            </p>
+
+            <a href="{{ url_for('booking') }}" class="text-link">
+                Start Planning →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAMPING OPTIONS
+    ========================== -->
+
+    <section class="camping-section" id="camping-options">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                CHOOSE YOUR EXPERIENCE
+            </span>
+
+            <h2>
+                Find Your Perfect<br>
+                Camping Style
+            </h2>
+
+            <p>
+                From simple public campsites to private wilderness
+                experiences, choose the style that suits your adventure.
+            </p>
+
+        </div>
+
+
+        <div class="camping-grid">
+
+
+            <!-- PUBLIC CAMPSITE -->
+
+            <article class="camp-card">
+
+                <div class="camp-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1000&q=85"
+                        alt="Public campsite">
+
+                    <span class="camp-number">
+                        01
+                    </span>
+
+                </div>
+
+                <div class="camp-content">
+
+                    <span class="camp-type">
+                        AFFORDABLE ADVENTURE
+                    </span>
+
+                    <h3>
+                        Public Campsites
+                    </h3>
+
+                    <p>
+                        Enjoy an affordable outdoor experience at
+                        established campsites near some of Kenya's
+                        most exciting destinations.
+                    </p>
+
+                    <a href="{{ url_for('booking') }}">
+                        Plan This Trip →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRIVATE CAMPSITE -->
+
+            <article class="camp-card">
+
+                <div class="camp-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=1000&q=85"
+                        alt="Private camping experience">
+
+                    <span class="camp-number">
+                        02
+                    </span>
+
+                </div>
+
+                <div class="camp-content">
+
+                    <span class="camp-type">
+                        PRIVATE ESCAPE
+                    </span>
+
+                    <h3>
+                        Private Campsites
+                    </h3>
+
+                    <p>
+                        Enjoy a more private camping experience with
+                        family, friends or your travel group surrounded
+                        by nature.
+                    </p>
+
+                    <a href="{{ url_for('booking') }}">
+                        Plan This Trip →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- BUSH CAMPING -->
+
+            <article class="camp-card">
+
+                <div class="camp-image">
+
+                    <img
+                        src="https://www.responsibletravel.com/imagesclient/L_289387.jpg"
+                        alt="Bush camping under the stars">
+
+                    <span class="camp-number">
+                        03
+                    </span>
+
+                </div>
+
+                <div class="camp-content">
+
+                    <span class="camp-type">
+                        WILDERNESS EXPERIENCE
+                    </span>
+
+                    <h3>
+                        Bush Camping
+                    </h3>
+
+                    <p>
+                        Get closer to nature with an authentic
+                        wilderness experience surrounded by the
+                        sights and sounds of the African bush.
+                    </p>
+
+                    <a href="{{ url_for('booking') }}">
+                        Plan This Trip →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURE IMAGE
+    ========================== -->
+
+    <section class="feature-section">
+
+        <div class="feature-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=1800&q=90"
+                alt="Safari camping experience">
+
+        </div>
+
+        <div class="feature-content">
+
+            <span class="section-label">
+                MORE THAN A CAMPSITE
+            </span>
+
+            <h2>
+                Wake Up<br>
+                Somewhere Extraordinary
+            </h2>
+
+            <p>
+                Imagine waking up surrounded by the sounds of nature,
+                stepping outside your tent and finding yourself
+                surrounded by the landscapes that make Kenya famous.
+            </p>
+
+            <a href="{{ url_for('booking') }}" class="btn primary-btn">
+                Build My Trip
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DESTINATIONS
+    ========================== -->
+
+    <section class="destinations-section">
+
+        <div class="section-heading light">
+
+            <span class="section-label">
+                EXPLORE KENYA
+            </span>
+
+            <h2>
+                Where Will You Camp?
+            </h2>
+
+            <p>
+                Choose from some of Kenya's most exciting safari
+                and outdoor destinations.
+            </p>
+
+        </div>
+
+
+        <div class="destination-grid">
+
+
+            <!-- MAASAI MARA -->
+
+            <a href="{{ url_for('maasai_mara') }}"
+               class="destination-card mara">
+
+                <div class="destination-overlay"></div>
+
+                <div class="destination-content">
+
+                    <span>
+                        DESTINATION 01
+                    </span>
+
+                    <h3>
+                        Maasai Mara
+                    </h3>
+
+                    <p>
+                        Open plains, wildlife and unforgettable
+                        wilderness experiences.
+                    </p>
+
+                    <strong>
+                        Explore →
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+            <!-- LAKE NAKURU -->
+
+            <a href="{{ url_for('lake_nakuru') }}"
+               class="destination-card nakuru">
+
+                <div class="destination-overlay"></div>
+
+                <div class="destination-content">
+
+                    <span>
+                        DESTINATION 02
+                    </span>
+
+                    <h3>
+                        Lake Nakuru
+                    </h3>
+
+                    <p>
+                        Scenic landscapes, wildlife and the beauty
+                        of Kenya's Rift Valley.
+                    </p>
+
+                    <strong>
+                        Explore →
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+            <!-- TSAVO -->
+
+            <a href="{{ url_for('tsavo') }}"
+               class="destination-card tsavo">
+
+                <div class="destination-overlay"></div>
+
+                <div class="destination-content">
+
+                    <span>
+                        DESTINATION 03
+                    </span>
+
+                    <h3>
+                        Tsavo
+                    </h3>
+
+                    <p>
+                        Vast wilderness, dramatic landscapes and
+                        incredible safari experiences.
+                    </p>
+
+                    <strong>
+                        Explore →
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+            <!-- OL DONYO SABUK -->
+
+            <a href="{{ url_for('oldonyo_sabuk') }}"
+               class="destination-card oldonyo">
+
+                <div class="destination-overlay"></div>
+
+                <div class="destination-content">
+
+                    <span>
+                        DESTINATION 04
+                    </span>
+
+                    <h3>
+                        Ol Donyo Sabuk
+                    </h3>
+
+                    <p>
+                        Hiking, nature, scenic views and camping
+                        close to Nairobi.
+                    </p>
+
+                    <strong>
+                        Explore →
+                    </strong>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHAT TO EXPECT
+    ========================== -->
+
+    <section class="experience-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                YOUR ADVENTURE
+            </span>
+
+            <h2>
+                Designed Around Your Journey
+            </h2>
+
+        </div>
+
+
+        <div class="experience-grid">
+
+            <div class="experience-card">
+
+                <div class="experience-number">
+                    01
+                </div>
+
+                <h3>
+                    Destination Planning
+                </h3>
+
+                <p>
+                    Select the destination and camping experience
+                    that fits your adventure.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <div class="experience-number">
+                    02
+                </div>
+
+                <h3>
+                    Transportation
+                </h3>
+
+                <p>
+                    Choose an appropriate transportation option
+                    for your safari and camping trip.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <div class="experience-number">
+                    03
+                </div>
+
+                <h3>
+                    Flexible Groups
+                </h3>
+
+                <p>
+                    Travel as a solo traveller, couple, family
+                    or group of friends.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <div class="experience-number">
+                    04
+                </div>
+
+                <h3>
+                    Memorable Experiences
+                </h3>
+
+                <p>
+                    Enjoy Kenya's landscapes, wildlife and
+                    outdoor experiences.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PACKING
+    ========================== -->
+
+    <section class="packing-section">
+
+        <div class="packing-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
+                alt="Outdoor camping">
+
+        </div>
+
+        <div class="packing-content">
+
+            <span class="section-label">
+                PREPARE FOR THE ADVENTURE
+            </span>
+
+            <h2>
+                Pack Smart.<br>
+                Travel Ready.
+            </h2>
+
+            <p>
+                A comfortable camping experience starts with
+                bringing the right essentials.
+            </p>
+
+            <div class="packing-list">
+
+                <div>
+                    <span>✓</span>
+                    Comfortable outdoor clothing
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Warm clothing for evenings
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Personal toiletries
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Sun protection
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Personal medication where required
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Camera or phone
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL CTA
+    ========================== -->
+
+    <section class="cta-section">
+
+        <div class="cta-image"></div>
+
+        <div class="cta-overlay"></div>
+
+        <div class="cta-content">
+
+            <span class="section-label">
+                YOUR KENYAN ADVENTURE STARTS HERE
+            </span>
+
+            <h2>
+                Ready To Sleep<br>
+                Under The Stars?
+            </h2>
+
+            <p>
+                Tell us where you want to go, how many people
+                are travelling and how long you want to stay.
+            </p>
+
+            <a href="{{ url_for('booking') }}"
+               class="btn primary-btn">
+                Start Your Booking
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Ngary <span>Tour & Travel</span>
+        </div>
+
+        <p>
+            Explore Kenya. Experience Adventure. Create Memories.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="{{ url_for('index') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('group_tours') }}">
+                Group Tours
+            </a>
+
+            <a href="{{ url_for('solo_tours') }}">
+                Solo Tours
+            </a>
+
+            <a href="{{ url_for('events') }}">
+                Events
+            </a>
+
+            <a href="{{ url_for('booking') }}">
+                Book Now
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Ngary Tour & Travel. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+```

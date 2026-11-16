@@ -1,0 +1,1118 @@
+```css
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f4ee;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar {
+    min-height: 78px;
+    padding: 0 7%;
+
+    background: #123d32;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #e7a43b;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #e7a43b;
+}
+
+.nav-links .book-btn {
+    background: #e7a43b;
+    color: #173d33;
+    padding: 11px 20px;
+    border-radius: 4px;
+}
+
+.nav-links .book-btn:hover {
+    background: #f2b85c;
+    color: #173d33;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 720px;
+
+    position: relative;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=2000&q=90");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.58),
+            rgba(0, 0, 0, 0.32)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+    padding: 40px 20px;
+}
+
+.hero-label {
+    display: inline-block;
+
+    color: #f0b14c;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: 72px;
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #f0b14c;
+}
+
+.hero-content p {
+    max-width: 700px;
+    margin: auto;
+
+    font-size: 19px;
+    color: #f3f3f3;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    margin: 5px;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #e7a43b;
+    color: #173d33;
+}
+
+.primary-btn:hover {
+    background: #f5bc65;
+    transform: translateY(-3px);
+}
+
+.outline-btn {
+    border: 2px solid white;
+    color: white;
+}
+
+.outline-btn:hover {
+    background: white;
+    color: #173d33;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.scroll-indicator span {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+
+    background: white;
+
+    margin: 8px auto 0;
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+.section-label {
+    color: #d8952f;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    display: block;
+
+    margin-bottom: 14px;
+}
+
+.section-heading {
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    color: #153f34;
+
+    font-size: 44px;
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+.section-heading p {
+    color: #707070;
+    font-size: 16px;
+}
+
+.section-heading.light h2 {
+    color: white;
+}
+
+.section-heading.light p {
+    color: #d6dfda;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 75px;
+
+    align-items: center;
+}
+
+.intro-image {
+    height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+}
+
+.intro-image img {
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.6s;
+}
+
+.intro-image:hover img {
+    transform: scale(1.05);
+}
+
+.intro-content h2 {
+    color: #153f34;
+
+    font-size: 43px;
+    line-height: 1.15;
+
+    margin-bottom: 22px;
+}
+
+.intro-content p {
+    color: #666;
+
+    margin-bottom: 18px;
+
+    font-size: 16px;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #153f34;
+
+    font-weight: 800;
+
+    border-bottom: 2px solid #e7a43b;
+
+    padding-bottom: 4px;
+}
+
+
+/* =====================================================
+   CAMPING OPTIONS
+===================================================== */
+
+.camping-section {
+    padding: 100px 7%;
+
+    background: #eeece5;
+}
+
+.camping-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.camp-card {
+    background: white;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+
+    transition: 0.35s;
+}
+
+.camp-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+.camp-image {
+    height: 310px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.camp-image img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s;
+}
+
+.camp-card:hover .camp-image img {
+    transform: scale(1.08);
+}
+
+.camp-number {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #e7a43b;
+
+    color: #173d33;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+.camp-content {
+    padding: 30px;
+}
+
+.camp-type {
+    color: #d8952f;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.camp-content h3 {
+    color: #153f34;
+
+    font-size: 27px;
+
+    margin: 8px 0 12px;
+}
+
+.camp-content p {
+    color: #6b6b6b;
+
+    margin-bottom: 20px;
+}
+
+.camp-content a {
+    color: #153f34;
+
+    font-weight: 800;
+}
+
+.camp-content a:hover {
+    color: #d8952f;
+}
+
+
+/* =====================================================
+   FEATURE SECTION
+===================================================== */
+
+.feature-section {
+    min-height: 600px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.feature-image {
+    position: absolute;
+    inset: 0;
+}
+
+.feature-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature-section::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(11, 43, 35, 0.94),
+            rgba(11, 43, 35, 0.35),
+            rgba(0, 0, 0, 0.1)
+        );
+}
+
+.feature-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin-left: 9%;
+
+    color: white;
+}
+
+.feature-content h2 {
+    font-size: 58px;
+
+    line-height: 1.05;
+
+    margin-bottom: 22px;
+}
+
+.feature-content p {
+    max-width: 550px;
+
+    color: #eeeeee;
+
+    font-size: 17px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =====================================================
+   DESTINATIONS
+===================================================== */
+
+.destinations-section {
+    padding: 100px 7%;
+
+    background: #143f34;
+}
+
+.destination-grid {
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.destination-card {
+    min-height: 470px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    border-radius: 5px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition: 0.4s;
+}
+
+.destination-card:hover {
+    transform: translateY(-8px);
+}
+
+.destination-card.mara {
+    background-image:
+        url("https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=900&q=85");
+}
+
+.destination-card.nakuru {
+    background-image:
+        url("https://www.intrepidtravel.com/v3/assets/blt0de87ff52d9c34a8/bltf7d2d21b84130853/697bd27a0900ae8157f74a6e/Intrepid-Travel-Kenya-Nakuru-Lake-National-Park-4WD-zebra-00685.jpg?auto=webp&format=pjpg&quality=75&width=1080");
+}
+
+.destination-card.tsavo {
+    background-image:
+        url("https://www.dertour.ro/getattachment/ca9c0e49-4c2c-4189-a71c-c3824f18fd76/Tsavo-%283%29.jpg?maxsidesize=1200&resizemode=force");
+}
+
+.destination-card.oldonyo {
+    background-image:
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85");
+}
+
+.destination-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 20%,
+            rgba(0, 0, 0, 0.82)
+        );
+}
+
+.destination-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 28px;
+
+    color: white;
+}
+
+.destination-content span {
+    color: #e7a43b;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+}
+
+.destination-content h3 {
+    font-size: 29px;
+
+    margin: 6px 0 10px;
+}
+
+.destination-content p {
+    font-size: 14px;
+
+    color: #e1e1e1;
+
+    margin-bottom: 16px;
+}
+
+.destination-content strong {
+    color: white;
+
+    font-size: 13px;
+}
+
+.destination-card:hover .destination-content strong {
+    color: #e7a43b;
+}
+
+
+/* =====================================================
+   EXPERIENCE
+===================================================== */
+
+.experience-section {
+    padding: 100px 7%;
+}
+
+.experience-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.experience-card {
+    padding: 35px 25px;
+
+    background: white;
+
+    border-top: 3px solid #e7a43b;
+
+    box-shadow:
+        0 7px 25px rgba(0, 0, 0, 0.06);
+}
+
+.experience-number {
+    color: #d8952f;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+.experience-card h3 {
+    color: #153f34;
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+.experience-card p {
+    color: #6d6d6d;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   PACKING
+===================================================== */
+
+.packing-section {
+    background: #123d32;
+
+    color: white;
+
+    padding: 90px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.packing-image {
+    height: 470px;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+}
+
+.packing-image img {
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.packing-content h2 {
+    font-size: 48px;
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.packing-content > p {
+    color: #d6dfda;
+
+    margin-bottom: 30px;
+}
+
+.packing-list {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+.packing-list div {
+    color: white;
+
+    font-size: 14px;
+}
+
+.packing-list span {
+    color: #e7a43b;
+
+    font-size: 18px;
+
+    margin-right: 8px;
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.cta-section {
+    min-height: 520px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+.cta-image {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=2000&q=90");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.cta-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(8, 36, 29, 0.78);
+}
+
+.cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    padding: 30px;
+}
+
+.cta-content h2 {
+    font-size: 58px;
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    color: #e3e3e3;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #0c2923;
+
+    color: #cdd8d4;
+
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+.footer-logo {
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+.footer-logo span {
+    color: #e7a43b;
+}
+
+footer > p {
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 22px;
+
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: #cdd8d4;
+
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: #e7a43b;
+}
+
+.copyright {
+    font-size: 12px;
+
+    color: #899791;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .intro-section {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .intro-image {
+        height: 430px;
+    }
+
+    .camping-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .camp-card:last-child {
+        grid-column: span 2;
+
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .packing-section {
+        grid-template-columns: 1fr;
+    }
+
+    .packing-image {
+        height: 400px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 16px;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-label {
+        font-size: 10px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .intro-section {
+        padding: 70px 5%;
+    }
+
+    .intro-image {
+        height: 350px;
+    }
+
+    .intro-content h2 {
+        font-size: 35px;
+    }
+
+    .camping-section {
+        padding: 70px 5%;
+    }
+
+    .camping-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .camp-card:last-child {
+        grid-column: auto;
+
+        max-width: none;
+    }
+
+    .camp-image {
+        height: 280px;
+    }
+
+    .feature-section {
+        min-height: 600px;
+    }
+
+    .feature-content {
+        margin-left: 0;
+
+        padding: 30px;
+    }
+
+    .feature-content h2 {
+        font-size: 42px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-card {
+        min-height: 420px;
+    }
+
+    .experience-section {
+        padding: 70px 5%;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .packing-section {
+        padding: 70px 5%;
+
+        gap: 40px;
+    }
+
+    .packing-image {
+        height: 320px;
+    }
+
+    .packing-content h2 {
+        font-size: 38px;
+    }
+
+    .packing-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-content h2 {
+        font-size: 42px;
+    }
+
+    .cta-content p {
+        font-size: 15px;
+    }
+}
+```
