@@ -7,37 +7,29 @@ from flask_bcrypt import Bcrypt
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_mail import Mail, Message
 from sqlalchemy.exc import IntegrityError
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 import uuid
 import os
-from datetime import datetime
+from datetime import datetime, UTC
 from dotenv import load_dotenv
+import requests
 
 load_dotenv()
 
 app = Flask(__name__)
-app.config['MAIL_SERVER'] = 'smtp-relay.brevo.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
-app.config['MAIL_DEBUG'] = False
-app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER') #  default sender email address
 
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 
 db = SQLAlchemy()
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 db.init_app(app)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
-mail = Mail(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 bcrypt = Bcrypt(app)
 admin = Admin(app)
+
 # Define the Client model
 class Client(UserMixin, db.Model):
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
@@ -64,8 +56,7 @@ class Quotation(db.Model):
     ages = db.Column(db.PickleType)  # Store ages as a list of integers
     quotation_text = db.Column(db.String)
     client_id = db.Column(db.String(36), db.ForeignKey('client.id'), nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-
+    created_at = db.Column(db.DateTime, default=lambda: datetime.now(UTC))
 # Function to save booking details
 def save_booking_details(client_id, park_choice, num_people, num_days, accommodation_choice, transportation_choice, ages, quotation_text):
     quotation = Quotation(
@@ -298,7 +289,7 @@ def generate_quotation():
                 ages=ages,
                 quotation_text=quotation_text,
                 client_id=current_user.id,
-                created_at=datetime.utcnow()  # Add the current timestamp
+                created_at=datetime.now(UTC)  # Add the current timestamp
             )
 
             db.session.add(new_quotation)
@@ -399,7 +390,7 @@ def booking():
                 ages=ages,
                 quotation_text=quotation_text,
                 client_id=current_user.id,
-                created_at=datetime.utcnow()
+                created_at=datetime.now(UTC)
             )
 
             db.session.add(new_quotation)
@@ -453,17 +444,77 @@ def booking():
     # GET request
     return render_template('booking.html')
 
-def send_confirmation_email(client_email, client_name, park_choice, num_people, num_days, accommodation_choice, transportation_choice, ages, quotation_text):
+
+def send_confirmation_email(
+    client_email,
+    client_name,
+    park_choice,
+    num_people,
+    num_days,
+    accommodation_choice,
+    transportation_choice,
+    ages,
+    quotation_text
+):
     subject = 'Booking Confirmation'
-    body = f"Dear {client_name},\n\nThank you for your booking!\n\nBooking Details:\nPark Choice: {park_choice}\nNumber of People: {num_people}\nNumber of Days: {num_days}\nAccommodation Choice: {accommodation_choice}\nTransportation Choice: {transportation_choice}\nAges: {', '.join(map(str, ages))}\n\nQuotation:\n{quotation_text}\n\nBest regards,\nNgary Tour and Travel"
 
-    # Use Flask-Mail to send the email
-    with app.app_context():
-        msg = Message(subject=subject, recipients=[client_email], body=body)
+    body = f"""Dear {client_name},
 
-        # Establish the SMTP connection here
-        with mail.connect() as conn:
-            conn.send(msg)
+Thank you for your booking with Ngary Tour & Travel.
+
+Booking Details:
+
+Park Choice: {park_choice}
+Number of People: {num_people}
+Number of Days: {num_days}
+Accommodation Choice: {accommodation_choice}
+Transportation Choice: {transportation_choice}
+Ages: {', '.join(map(str, ages))}
+
+Quotation:
+
+{quotation_text}
+
+Best regards,
+Ngary Tour & Travel
+"""
+
+    api_key = os.getenv('BREVO_API_KEY')
+    sender_email = os.getenv('MAIL_DEFAULT_SENDER')
+
+    if not api_key:
+        raise RuntimeError('BREVO_API_KEY is not configured.')
+
+    if not sender_email:
+        raise RuntimeError('MAIL_DEFAULT_SENDER is not configured.')
+
+    response = requests.post(
+        'https://api.brevo.com/v3/smtp/email',
+        headers={
+            'accept': 'application/json',
+            'api-key': api_key,
+            'content-type': 'application/json'
+        },
+        json={
+            'sender': {
+                'name': 'Ngary Tour & Travel',
+                'email': sender_email
+            },
+            'to': [
+                {
+                    'email': client_email,
+                    'name': client_name
+                }
+            ],
+            'subject': subject,
+            'textContent': body
+        },
+        timeout=30
+    )
+
+    response.raise_for_status()
+
+    return response.json()
 
 @app.route('/quotation_result')
 @login_required
@@ -494,24 +545,6 @@ def get_latest_booking_details(client_id):
     return latest_booking
     #return Quotation.query.filter_by(client_id=client_id).order_by(Quotation.created_at.desc()).first()
 
-def send_confirmation_email(client_email, client_name, park_choice, num_people, num_days, accommodation_choice, transportation_choice, ages, quotation_text):
-    subject = 'Booking Confirmation'
-    # Use render_template to render an HTML email template
-    body = render_template(
-        'confirmation_email.html',
-        client_name=client_name,
-        park_choice=park_choice,
-        num_people=num_people,
-        num_days=num_days,
-        accommodation_choice=accommodation_choice,
-        transportation_choice=transportation_choice,
-        ages=ages,
-        quotation_text=quotation_text
-    )
-
-    message = Message(subject, recipients=[client_email], html=body)
-    with mail.connect() as conn:
-        conn.send(message)
 
 def get_quotation_details(quotation_id):
     # Fetch the Quotation from the database based on the quotation_id
