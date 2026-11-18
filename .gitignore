@@ -1,4 +1,5 @@
 venv/
+database_backup/
 __pycache__/
 *.pyc
 .vs/
